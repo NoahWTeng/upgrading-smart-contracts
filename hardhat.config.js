@@ -1,8 +1,9 @@
+const dotenv = require("dotenv");
 require("@nomiclabs/hardhat-waffle");
 require("@nomiclabs/hardhat-ethers");
 require("@openzeppelin/hardhat-upgrades");
 require("@nomiclabs/hardhat-etherscan");
-
+dotenv.config();
 // This is a sample Hardhat task. To learn how to create your own go to
 // https://hardhat.org/guides/create-task.html
 task("accounts", "Prints the list of accounts", async (taskArgs, hre) => {
@@ -29,10 +30,8 @@ const RINKEBY_RPC_URL =
 const MNEMONIC = process.env.MNEMONIC || ".....secret keys";
 // optional
 
-console.log(ETHERSCAN_API_KEY);
-
 module.exports = {
-  defaultNetwork: "hardhat",
+  defaultNetwork: "rinkeby",
   networks: {
     hardhat: {},
     local: {
